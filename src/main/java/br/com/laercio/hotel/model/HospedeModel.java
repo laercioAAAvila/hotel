@@ -14,9 +14,9 @@ public class HospedeModel {
 
 	private String nome;
 	private int cpf;
-	private long cnpj;
-	private int phone;
+	private int cnpj;
 	private double valorAPagar;
+	private String phone;
 	private String estadoCivil;
 	private String entrada;
 	private String saida;
@@ -49,19 +49,27 @@ public class HospedeModel {
 		this.cpf = cpf;
 	}
 
-	public long getCnpj() {
+	public int getCnpj() {
 		return cnpj;
 	}
 
-	public void setCnpj(long cnpj) {
+	public void setCnpj(int cnpj) {
 		this.cnpj = cnpj;
 	}
 
-	public int getPhone() {
+	public double getValorAPagar() {
+		return valorAPagar;
+	}
+
+	public void setValorAPagar(double valorAPagar) {
+		this.valorAPagar = valorAPagar;
+	}
+
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -71,14 +79,6 @@ public class HospedeModel {
 
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
-	}
-
-	public double getValorAPagar() {
-		return valorAPagar;
-	}
-
-	public void setValorAPagar(double valorAPagar) {
-		this.valorAPagar = valorAPagar;
 	}
 
 	public String getEntrada() {

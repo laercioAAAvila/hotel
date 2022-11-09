@@ -1,45 +1,81 @@
-<form th:action="@{'/cadastro/hospede/create'}" method="POST">
-	<div class="mb-3">
-		<label for="InputName" class="form-label">Nome</label> <input
-			type="text" class="form-control" id="InputName">
+<form th:action="@{/cadastro/hospede/create}"
+	th:object="${hospedeModel}" method="POST">
+
+	<div class="card mb-2">
+		<div class="card-header">
+			<span>Informações</span>
+		</div>
+		<div class="card-body">
+			<div class="mb-3">
+				<label for="nome" class="form-label">Nome</label> <input type="text"
+					name="nome" class="form-control" id="nome">
+			</div>
+			<div class="mb-3">
+				<label for="cpf" class="form-label">CPF</label> <input type="number"
+					name="cpf" class="form-control" id="cpf" value="0">
+			</div>
+			<div class="mb-3">
+				<label for="cnpj" class="form-label">CNPJ</label> <input
+					type="number" name="cnpj" class="form-control" id="cnpj" value="0">
+			</div>
+			<div class="mb-3">
+				<label for="phone" class="form-label">Número celular</label> <input
+					type="text" name="phone" class="form-control" id="phone">
+			</div>
+			<div class="mb-3">
+				<label for="valorAPagar" class="form-label">ValorTotal</label> <input
+					type="number" name="valorAPagar" class="form-control"
+					id="valorAPagar" value="0">
+			</div>
+
+			<div class="mb-3">
+				
+				<label id="estadoCivil" class="form-label">Estado civil</label>
+				<select class="form-select" name="estadoCivil"
+					aria-label="categoria">
+					<option selected>Selecione</option>
+					<option value="solteiro(a)">Solteiro(a)</option>
+					<option value="casado(a)">Casado(a)</option>
+					<option value="viuvo(a)">Viuvo(a)</option>
+				</select>
+			</div>
+		</div>
+
+
+
 	</div>
-	<div class="mb-3">
-		<label for="InputCpf" class="form-label">CPF</label> <input
-			type="number" class="form-control" id="InputCpf">
+
+	<div class="card mb-2">
+		<div class="card-header">
+			<label for="Entrada" class="form-label">Entrada<br>
+			</label>
+		</div>
+		<div class="card-body">
+
+			<div class="mb-3">
+
+				<div>
+					<input type="date" name="entrada" id="entrada">
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="mb-3">
-		<label for="InputCnpj" class="form-label">CNPJ</label> <input
-			type="number" class="form-control" id="InputCnpj">
-	</div>
-	<div class="mb-3">
-		<label for="InputPhone" class="form-label">Número celular</label> <input
-			type="text" class="form-control" id="InputPhone">
-	</div>
-	<div class="mb-3">
-		<label for="InputValorAPagar" class="form-label">ValorTotal</label> <input
-			type="number" class="form-control" id="InputValorAPagar">
-	</div>
-	<div class="mb-3">
-		<label for="InputEntrada" class="form-label">Entrada</label> <input
-			type="text" class="form-control" id="InputEntrada">
-	</div>
-	<div class="card mb-3">
+	<div class="card mb-2">
 		<div class="card-header">
 			<span>De onde vem</span>
 		</div>
 		<div class="card-body">
 			<div>
-				<span>De onde vem</span>
 				<div class="mb-3">
-					<div id="inputCidadeVem" class="form-text">Estado civil</div>
-					<select class="form-select" aria-label="categoria">
+					<div id="vemCidade" class="form-text">Cidade</div>
+					<select class="form-select" name="vemCidade" aria-label="categoria">
 						<option selected>Selecione</option>
 						<option value="Dianópolis">Dianópolis</option>
 					</select>
 				</div>
 				<div class="mb-3">
-					<div id="inputUfvem" class="form-text">Estado civil</div>
-					<select class="form-select" aria-label="categoria">
+					<div id="vemUF" class="form-text">Estado</div>
+					<select class="form-select" name="vemUF" aria-label="categoria">
 						<option selected>Selecione</option>
 						<option value="TO">Tocantins</option>
 					</select>
@@ -47,21 +83,22 @@
 			</div>
 		</div>
 	</div>
-	<div class="card">
+	<div class="card mb-3">
 		<div class="card-header">
 			<span>Pra onde vai</span>
 		</div>
 		<div class="card-body">
 			<div class="mb-3">
-				<div id="inputCidadeVai" class="form-text">Estado civil</div>
-				<select class="form-select" aria-label="categoria">
+				<div id="destinoCidade" class="form-text">Cidade</div>
+				<select class="form-select" name="destinoCidade"
+					aria-label="categoria">
 					<option selected>Selecione</option>
 					<option value="Dianópolis">Dianópolis</option>
 				</select>
 			</div>
 			<div class="mb-3">
-				<div id="inputUfvai" class="form-text">Estado civil</div>
-				<select class="form-select" aria-label="categoria">
+				<div id="destinoUf" class="form-text">Estado</div>
+				<select class="form-select" name="destinoUf" aria-label="categoria">
 					<option selected>Selecione</option>
 					<option value="TO">Tocantins</option>
 				</select>
@@ -69,15 +106,7 @@
 		</div>
 	</div>
 
-	<div class="mb-3">
-		<div id="estadocivil" class="form-text">Estado civil</div>
-		<select class="form-select" aria-label="categoria">
-			<option selected>Selecione</option>
-			<option value="solteiro(a)">Solteiro(a)</option>
-			<option value="casado(a)">Casado(a)</option>
-			<option value="viuvo(a)">Viuvo(a)</option>
-		</select>
-	</div>
+
 
 	<button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>

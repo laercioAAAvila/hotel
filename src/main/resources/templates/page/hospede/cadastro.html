@@ -7,12 +7,12 @@
 	<nav th:insert="fragments/base :: nav" />
 	
 	
-		<div class="card">
+		<div class="card m-1">
 		<div class="card-header">
 			<h1>Cadastrar hospede</h1>
 		</div>
 		<div class="card-body">
-		  <form th:insert="fragments/pessoas/form :: form" />
+		  <form th:replace="fragments/pessoas/form :: form" />
 		</div>
 	</div>
 	
